@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, ActivityIndicator } from 'react-native';
+import Weather from './Weather';
 
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoaded: false,
+      isLoaded: true,
     };
   }
 
@@ -15,9 +16,9 @@ export default class App extends Component {
       // View 컴포넌트를 이옹하면 ios/android 환경에 따라 objective-c or java 로 변
       <View style={styles.container}>
         {isLoaded
-          ? null
+          ? <Weather />
           : <View style={styles.loading}>
-              <Text style={styles.loadingText}>Getting the weather</Text>
+            <Text style={styles.loadingText}>Getting the weather</Text>
           </View>
         }
       </View>
