@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, View, ActivityIndicator, StatusBar } from 'react-native';
 import Weather from './Weather';
 
 export default class App extends Component {
@@ -15,6 +15,9 @@ export default class App extends Component {
     return (
       // View 컴포넌트를 이옹하면 ios/android 환경에 따라 objective-c or java 로 변
       <View style={styles.container}>
+        <StatusBar
+          hidden={true}
+        />
         {isLoaded
           ? <Weather />
           : <View style={styles.loading}>
